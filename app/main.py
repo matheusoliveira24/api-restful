@@ -163,7 +163,7 @@ def deletar_avaliacao(id_avaliacao: int):
 
 #Criando as rotas para atualizar os dados
 @app.put("/Series/{id_serie}")
-def atualizar_serie(id_serie: int, serie: Serie):
+def atualizar_serie(id_serie: int, id_categoria: int, serie: Serie):
     db.conectar()
     sql = "UPDATE serie SET titulo = %s, descricao = %s, ano_lancamento = %s, id_categoria = %s WHERE id_serie = %s"
     db.executar(sql, (serie.titulo, serie.descricao, serie.ano_lancamento, serie.id_categoria, id_serie))
