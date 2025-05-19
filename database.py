@@ -5,6 +5,7 @@ from os import getenv
 from typing import Optional, Any, Tuple, List
 
 class Database:
+    
     def __init__(self) -> None:
         load_dotenv()
         self.host: str = getenv('DB_HOST')
